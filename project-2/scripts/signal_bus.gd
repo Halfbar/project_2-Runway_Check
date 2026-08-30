@@ -1,0 +1,7 @@
+extends Node
+
+signal ui_panels_closed
+signal open_closet_ui
+signal game_paused
+signal player_cloth_changed
+signal new_requirement

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Cloth_Data" format=3 uid="uid://c673dvks27tmc"]
+
+[ext_resource type="Script" uid="uid://glnyry65xj5y" path="res://other/resources/clothes_data.gd" id="1_v4a0u"]
+[ext_resource type="Texture2D" uid="uid://8chhpjoq4qgl" path="res://other/resources/clothes_textures/pizza/pizza_top.tres" id="2_v4a0u"]
+
+[resource]
+script = ExtResource("1_v4a0u")
+id = "17"
+display_name = "Pizza top"
+texture = ExtResource("2_v4a0u")
+slot = 1
+color = Array[String](["Black", "Yellow", "Red", "White"])
+metadata/_custom_type_script = "uid://glnyry65xj5y"

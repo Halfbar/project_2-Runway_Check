@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://cqqucixguxrww"]
+
+[ext_resource type="Script" uid="uid://cqfl6ngv2t3k1" path="res://scenes/game_objects/closet/closet.gd" id="1_3lrmf"]
+[ext_resource type="Texture2D" uid="uid://dbdxp31sdbbw6" path="res://scenes/game_objects/closet/closet.png" id="2_3lrmf"]
+[ext_resource type="Texture2D" uid="uid://d2ga8kjthhyre" path="res://icon.svg" id="5_73st4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lrmf"]
+atlas = ExtResource("2_3lrmf")
+region = Rect2(76, 0, 38, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyqf7"]
+atlas = ExtResource("2_3lrmf")
+region = Rect2(38, 0, 38, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73st4"]
+atlas = ExtResource("2_3lrmf")
+region = Rect2(0, 0, 38, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gchh8"]
+atlas = ExtResource("2_3lrmf")
+region = Rect2(76, 0, 38, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ac76"]
+atlas = ExtResource("2_3lrmf")
+region = Rect2(0, 0, 38, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1b5a"]
+atlas = ExtResource("2_3lrmf")
+region = Rect2(38, 0, 38, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq8vb"]
+atlas = ExtResource("2_3lrmf")
+region = Rect2(76, 0, 38, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ass7y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lrmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyqf7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73st4")
+}],
+"loop": 0,
+"name": &"close",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gchh8")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ac76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1b5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq8vb")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ass7y"]
+size = Vector2(1, 4)
+
+[node name="closet" type="Node2D" unique_id=1732902212]
+process_mode = 3
+script = ExtResource("1_3lrmf")
+
+[node name="closet_sprite2d" type="AnimatedSprite2D" parent="." unique_id=1502542522]
+process_mode = 3
+scale = Vector2(0.1015625, 0.1015625)
+sprite_frames = SubResource("SpriteFrames_ass7y")
+animation = &"close"
+autoplay = "idle"
+frame = 2
+frame_progress = 1.0
+
+[node name="closet_area2d" type="Area2D" parent="." unique_id=1963910972]
+collision_layer = 2
+
+[node name="closet_collision" type="CollisionShape2D" parent="closet_area2d" unique_id=1884750722]
+shape = SubResource("RectangleShape2D_ass7y")
+
+[node name="e_png" type="Sprite2D" parent="." unique_id=1952133549]
+visible = false
+position = Vector2(0, -3)
+scale = Vector2(0.0078125, 0.0078125)
+texture = ExtResource("5_73st4")
+
+[connection signal="area_entered" from="closet_area2d" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="closet_area2d" to="." method="_on_closet_area_2d_area_exited"]

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cfkcjnv0ju1wy"]
+
+[ext_resource type="Script" uid="uid://bulg65tck2see" path="res://scripts/game_manager/game_manager.gd" id="1_aquld"]
+[ext_resource type="Script" uid="uid://glnyry65xj5y" path="res://other/resources/clothes_data.gd" id="2_nufgx"]
+[ext_resource type="Resource" uid="uid://qt6mmnron8es" path="res://other/resources/clothes/head/farmer_head.tres" id="3_a0ggc"]
+[ext_resource type="Resource" uid="uid://dy0tvnw4yg7el" path="res://other/resources/clothes/top/farmer_top.tres" id="4_0btuh"]
+[ext_resource type="Resource" uid="uid://ds6gpjva72dqg" path="res://other/resources/clothes/head/nothing_head.tres" id="4_lps65"]
+[ext_resource type="Resource" uid="uid://eaixh0symsw6" path="res://other/resources/clothes/head/angry_head.tres" id="5_72amx"]
+[ext_resource type="Resource" uid="uid://5iqnw348epfm" path="res://other/resources/clothes/top/nothing_top.tres" id="6_35w1r"]
+[ext_resource type="Resource" uid="uid://72ao4rgbxqbk" path="res://other/resources/clothes/head/army_head.tres" id="6_rg8ia"]
+[ext_resource type="Resource" uid="uid://dttioxa6ha5k5" path="res://other/resources/clothes/head/costume_head.tres" id="7_hmc5t"]
+[ext_resource type="Resource" uid="uid://bwj33dvsb05s3" path="res://other/resources/clothes/head/happy_head.tres" id="8_kik30"]
+[ext_resource type="Resource" uid="uid://x6ssb3tnar3m" path="res://other/resources/clothes/head/pirate_head.tres" id="9_7xa1k"]
+[ext_resource type="Resource" uid="uid://bv5w66uv4g3wm" path="res://other/resources/clothes/head/pizza_head.tres" id="10_n268g"]
+[ext_resource type="Resource" uid="uid://b518to26q1qd2" path="res://other/resources/clothes/head/worker_head.tres" id="11_bbwdo"]
+[ext_resource type="Resource" uid="uid://damtgtwjwwttc" path="res://other/resources/clothes/top/angry_top.tres" id="14_pq2b2"]
+[ext_resource type="Resource" uid="uid://ckrid18bug0qo" path="res://other/resources/clothes/top/army_top.tres" id="15_v7sbi"]
+[ext_resource type="Resource" uid="uid://cx08n13lgu5e3" path="res://other/resources/clothes/top/costume_top.tres" id="16_nptrq"]
+[ext_resource type="Resource" uid="uid://0qw0uyumi57k" path="res://other/resources/clothes/top/happy_top.tres" id="17_wcrja"]
+[ext_resource type="Resource" uid="uid://djmnuqxgs6htg" path="res://other/resources/clothes/top/pirate_top.tres" id="18_3bac2"]
+[ext_resource type="Resource" uid="uid://c673dvks27tmc" path="res://other/resources/clothes/top/pizza_top.tres" id="19_m333e"]
+[ext_resource type="Resource" uid="uid://c1vgw3p0ek0a8" path="res://other/resources/clothes/top/worker_top.tres" id="20_cwgp8"]
+
+[node name="game_manager" type="Node" unique_id=1337520879]
+script = ExtResource("1_aquld")
+all_heads = Array[ExtResource("2_nufgx")]([ExtResource("4_lps65"), ExtResource("3_a0ggc"), ExtResource("5_72amx"), ExtResource("6_rg8ia"), ExtResource("7_hmc5t"), ExtResource("8_kik30"), ExtResource("9_7xa1k"), ExtResource("10_n268g"), ExtResource("11_bbwdo")])
+all_tops = Array[ExtResource("2_nufgx")]([ExtResource("6_35w1r"), ExtResource("4_0btuh"), ExtResource("14_pq2b2"), ExtResource("15_v7sbi"), ExtResource("16_nptrq"), ExtResource("17_wcrja"), ExtResource("18_3bac2"), ExtResource("19_m333e"), ExtResource("20_cwgp8")])

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Cloth_Data" format=3 uid="uid://djmnuqxgs6htg"]
+
+[ext_resource type="Script" uid="uid://glnyry65xj5y" path="res://other/resources/clothes_data.gd" id="1_yqw8t"]
+[ext_resource type="Texture2D" uid="uid://ck1c0duglkpap" path="res://other/resources/clothes_textures/pirate/pirate_top.tres" id="2_yqw8t"]
+
+[resource]
+script = ExtResource("1_yqw8t")
+id = "16"
+display_name = "Pirate top"
+texture = ExtResource("2_yqw8t")
+slot = 1
+color = Array[String](["Brown", "Black"])
+metadata/_custom_type_script = "uid://glnyry65xj5y"

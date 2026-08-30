@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://6qieb8t71qlq"]
+
+[ext_resource type="Script" uid="uid://cn8aiiq8w422l" path="res://scenes/game_objects/closet/closet_ui/closet_ui.gd" id="1_p3tvp"]
+[ext_resource type="PackedScene" uid="uid://d0eggyfy8wk1y" path="res://scenes/other/theme/btn/game_btn.tscn" id="1_rx6ve"]
+[ext_resource type="Texture2D" uid="uid://i6o5xaiytypd" path="res://other/resources/clothes_textures/nothing/nothing_head.tres" id="3_kmy3l"]
+[ext_resource type="Texture2D" uid="uid://bqmpwptv0vfto" path="res://other/resources/clothes_textures/nothing/nothing_top.tres" id="4_4wnka"]
+
+[node name="closet_ui" type="Control" unique_id=1422097740]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p3tvp")
+
+[node name="closet_ui_panel" type="Panel" parent="." unique_id=1743327164]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="clost_ui_name" type="Label" parent="closet_ui_panel" unique_id=1848063150]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -59.0
+offset_top = 58.0
+offset_right = 36.0
+offset_bottom = 103.0
+grow_horizontal = 2
+text = "Closet"
+
+[node name="closet_ui_margin_container" type="MarginContainer" parent="closet_ui_panel" unique_id=327364138]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 60
+
+[node name="vbox_container" type="VBoxContainer" parent="closet_ui_panel/closet_ui_margin_container" unique_id=131866781]
+layout_mode = 2
+alignment = 1
+
+[node name="head_label" type="Label" parent="closet_ui_panel/closet_ui_margin_container/vbox_container" unique_id=661952668]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Head"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="head_container" type="HBoxContainer" parent="closet_ui_panel/closet_ui_margin_container/vbox_container" unique_id=1879061626]
+layout_mode = 2
+alignment = 1
+
+[node name="prev_head_btn" parent="closet_ui_panel/closet_ui_margin_container/vbox_container/head_container" unique_id=736548539 instance=ExtResource("1_rx6ve")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Previous"
+
+[node name="head_texture" type="TextureRect" parent="closet_ui_panel/closet_ui_margin_container/vbox_container/head_container" unique_id=1630517919]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_kmy3l")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="next_head_btn" parent="closet_ui_panel/closet_ui_margin_container/vbox_container/head_container" unique_id=220266179 instance=ExtResource("1_rx6ve")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Next"
+
+[node name="upper_body_label" type="Label" parent="closet_ui_panel/closet_ui_margin_container/vbox_container" unique_id=83113422]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Upper Body"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="upper_body_container" type="HBoxContainer" parent="closet_ui_panel/closet_ui_margin_container/vbox_container" unique_id=1309662927]
+layout_mode = 2
+alignment = 1
+
+[node name="prev_upper_body_btn" parent="closet_ui_panel/closet_ui_margin_container/vbox_container/upper_body_container" unique_id=1248772407 instance=ExtResource("1_rx6ve")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Prevous"
+
+[node name="upper_body_texture" type="TextureRect" parent="closet_ui_panel/closet_ui_margin_container/vbox_container/upper_body_container" unique_id=711470991]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_4wnka")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="next_upper_body_btn" parent="closet_ui_panel/closet_ui_margin_container/vbox_container/upper_body_container" unique_id=1679820975 instance=ExtResource("1_rx6ve")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Next"
+
+[node name="closet_ui_confirm_btn" parent="closet_ui_panel" unique_id=1816650962 instance=ExtResource("1_rx6ve")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -143.0
+offset_right = 106.666626
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Confitm"
+
+[connection signal="pressed" from="closet_ui_panel/closet_ui_margin_container/vbox_container/head_container/prev_head_btn" to="." method="_on_prev_head_btn_pressed"]
+[connection signal="pressed" from="closet_ui_panel/closet_ui_margin_container/vbox_container/head_container/next_head_btn" to="." method="_on_next_head_btn_pressed"]
+[connection signal="pressed" from="closet_ui_panel/closet_ui_margin_container/vbox_container/upper_body_container/prev_upper_body_btn" to="." method="_on_prev_upper_body_btn_pressed"]
+[connection signal="pressed" from="closet_ui_panel/closet_ui_margin_container/vbox_container/upper_body_container/next_upper_body_btn" to="." method="_on_next_upper_body_btn_pressed"]
+[connection signal="pressed" from="closet_ui_panel/closet_ui_confirm_btn" to="." method="_on_closet_ui_confirm_btn_pressed"]

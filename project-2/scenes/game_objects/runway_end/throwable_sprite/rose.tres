@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://ei0ohhjddenq"]
+
+[ext_resource type="Texture2D" uid="uid://d4i8s3v73lffl" path="res://scenes/game_objects/runway_end/throwable_sprite/other.png" id="1_sygb6"]
+
+[resource]
+atlas = ExtResource("1_sygb6")
+region = Rect2(150, 72, 9, 24)

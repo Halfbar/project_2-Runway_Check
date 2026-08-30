@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dcq7tosjnce83"]
+
+[node name="sfx_player" type="AudioStreamPlayer" unique_id=527808177]
+volume_db = -15.0
+bus = &"SFX"

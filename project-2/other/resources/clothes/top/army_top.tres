@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Cloth_Data" format=3 uid="uid://ckrid18bug0qo"]
+
+[ext_resource type="Script" uid="uid://glnyry65xj5y" path="res://other/resources/clothes_data.gd" id="1_f5tqd"]
+[ext_resource type="Texture2D" uid="uid://dw36rmjtrtmr4" path="res://other/resources/clothes_textures/army/army_top.tres" id="2_f5tqd"]
+
+[resource]
+script = ExtResource("1_f5tqd")
+id = "11"
+display_name = "Army top"
+texture = ExtResource("2_f5tqd")
+slot = 1
+color = Array[String](["Green", "Black", "White"])
+metadata/_custom_type_script = "uid://glnyry65xj5y"

@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://ccwru0ki1noaq"]
+
+[ext_resource type="Script" uid="uid://ba4f1vnomy4x6" path="res://scenes/other/pause/pause.gd" id="1_mw2vn"]
+[ext_resource type="PackedScene" uid="uid://d0eggyfy8wk1y" path="res://scenes/other/theme/btn/game_btn.tscn" id="1_y4vok"]
+[ext_resource type="PackedScene" uid="uid://be0tudumof4jc" path="res://scenes/other/settings/settings.tscn" id="2_f8n1q"]
+
+[node name="pause" type="Control" unique_id=1352486914]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mw2vn")
+
+[node name="panels" type="Control" parent="." unique_id=1871304255]
+layout_mode = 1
+anchor_left = 0.071
+anchor_top = 0.085
+anchor_right = 0.897
+anchor_bottom = 0.91
+offset_left = 0.20800018
+offset_top = -0.08000183
+offset_right = -0.23291016
+offset_bottom = 0.32000732
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="settings" parent="panels" unique_id=1268692987 instance=ExtResource("2_f8n1q")]
+visible = false
+layout_mode = 1
+
+[node name="game_btn" parent="panels/settings" unique_id=736548539 instance=ExtResource("1_y4vok")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.555542
+offset_top = -112.0
+offset_right = 45.388916
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Exit"
+
+[node name="btns" type="Panel" parent="." unique_id=1034997081]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 175.0
+offset_right = 732.0
+offset_bottom = 500.0
+
+[node name="margin_container" type="MarginContainer" parent="btns" unique_id=705234446]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="btn_container" type="VBoxContainer" parent="btns/margin_container" unique_id=1312262314]
+layout_mode = 2
+
+[node name="continue_btn" parent="btns/margin_container/btn_container" unique_id=558246799 instance=ExtResource("1_y4vok")]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Continue"
+
+[node name="settings_btn" parent="btns/margin_container/btn_container" unique_id=456885816 instance=ExtResource("1_y4vok")]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Settings"
+
+[node name="exit_btn" parent="btns/margin_container/btn_container" unique_id=574909261 instance=ExtResource("1_y4vok")]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit"
+
+[connection signal="pressed" from="panels/settings/game_btn" to="." method="_on_game_btn_pressed"]
+[connection signal="pressed" from="btns/margin_container/btn_container/continue_btn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="btns/margin_container/btn_container/settings_btn" to="." method="_on_settings_btn_pressed"]
+[connection signal="pressed" from="btns/margin_container/btn_container/exit_btn" to="." method="_on_exit_btn_pressed"]

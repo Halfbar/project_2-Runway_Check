@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Cloth_Data" format=3 uid="uid://0qw0uyumi57k"]
+
+[ext_resource type="Script" uid="uid://glnyry65xj5y" path="res://other/resources/clothes_data.gd" id="1_8y3yp"]
+[ext_resource type="Texture2D" uid="uid://bjn5wvkh5xkte" path="res://other/resources/clothes_textures/happy/happy_top.tres" id="2_8y3yp"]
+
+[resource]
+script = ExtResource("1_8y3yp")
+id = "14"
+display_name = "Happy top"
+texture = ExtResource("2_8y3yp")
+slot = 1
+color = Array[String](["Green", "Red"])
+metadata/_custom_type_script = "uid://glnyry65xj5y"

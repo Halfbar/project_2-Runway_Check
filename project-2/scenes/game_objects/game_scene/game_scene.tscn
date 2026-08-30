@@ -1,0 +1,334 @@
+[gd_scene format=3 uid="uid://4ul1kxlgqkqr"]
+
+[ext_resource type="PackedScene" uid="uid://oiaq7oqupqby" path="res://scenes/game_objects/player/player.tscn" id="1_0mnch"]
+[ext_resource type="Script" uid="uid://bn8oqrnw83tvy" path="res://scenes/game_objects/game_scene/game_scene.gd" id="1_dgd0g"]
+[ext_resource type="Texture2D" uid="uid://brjr65acq16or" path="res://scenes/game_objects/game_scene/runway_bg.tres" id="2_28auo"]
+[ext_resource type="PackedScene" uid="uid://dnfjmpyl8afs1" path="res://scenes/game_objects/courtains/courtains.tscn" id="2_br7dr"]
+[ext_resource type="Texture2D" uid="uid://b0bk3rnulg8rd" path="res://scenes/game_objects/game_scene/closet_bg.tres" id="3_4777f"]
+[ext_resource type="PackedScene" uid="uid://cqqucixguxrww" path="res://scenes/game_objects/closet/closet.tscn" id="3_dgd0g"]
+[ext_resource type="PackedScene" uid="uid://fm48ggovpqm1" path="res://scenes/game_objects/runway_end/runway_end.tscn" id="4_28auo"]
+[ext_resource type="PackedScene" uid="uid://bpwqr32bem1g1" path="res://scenes/other/user_interface/user_interface.tscn" id="5_br7dr"]
+[ext_resource type="Texture2D" uid="uid://bcwpoal7hxjem" path="res://scenes/game_objects/game_scene/crowd_guy.tres" id="5_psij3"]
+[ext_resource type="Script" uid="uid://kpws8w14gp5k" path="res://scenes/game_objects/game_scene/crowd_guy_jump.gd" id="6_u2vby"]
+
+[node name="game_scene" type="Node2D" unique_id=1133449535 node_paths=PackedStringArray("crowd_layers")]
+script = ExtResource("1_dgd0g")
+crowd_layers = [NodePath("crowd/front_crowd"), NodePath("crowd/front_crowd2"), NodePath("crowd/back_crowd"), NodePath("crowd/back_crowd2"), NodePath("crowd/mid_crowd")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1089103022]
+color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+
+[node name="bg" type="Node2D" parent="." unique_id=2061536970]
+z_index = 1
+
+[node name="runway_bg" type="Sprite2D" parent="bg" unique_id=1801886284]
+position = Vector2(224, -22)
+texture = ExtResource("2_28auo")
+
+[node name="closet_bg" type="Sprite2D" parent="bg" unique_id=75597709]
+position = Vector2(-86.08592, -29.738369)
+scale = Vector2(3.4773765, 1.0054506)
+texture = ExtResource("3_4777f")
+
+[node name="runway_end" parent="." unique_id=591645060 instance=ExtResource("4_28auo")]
+z_index = 10
+position = Vector2(247, -14)
+
+[node name="crowd" type="Node2D" parent="." unique_id=1414426920]
+z_index = 9
+
+[node name="front_crowd" type="Parallax2D" parent="crowd" unique_id=1004750781]
+z_index = 10
+
+[node name="crowd_guy" type="Sprite2D" parent="crowd/front_crowd" unique_id=1405021596]
+position = Vector2(135, 8)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy2" type="Sprite2D" parent="crowd/front_crowd" unique_id=268863905]
+position = Vector2(154, 8)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy3" type="Sprite2D" parent="crowd/front_crowd" unique_id=502476453]
+position = Vector2(173, 8)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy4" type="Sprite2D" parent="crowd/front_crowd" unique_id=1038305447]
+position = Vector2(192, 8)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy5" type="Sprite2D" parent="crowd/front_crowd" unique_id=2112165243]
+position = Vector2(212, 8)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy6" type="Sprite2D" parent="crowd/front_crowd" unique_id=1907525469]
+position = Vector2(231, 8)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy7" type="Sprite2D" parent="crowd/front_crowd" unique_id=430907295]
+position = Vector2(250, 8)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy8" type="Sprite2D" parent="crowd/front_crowd" unique_id=319356056]
+position = Vector2(269, 8)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy9" type="Sprite2D" parent="crowd/front_crowd" unique_id=1667038452]
+position = Vector2(269, 8)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy10" type="Sprite2D" parent="crowd/front_crowd" unique_id=901972734]
+position = Vector2(290, 8)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy11" type="Sprite2D" parent="crowd/front_crowd" unique_id=125558497]
+position = Vector2(312, 8)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="front_crowd2" type="Parallax2D" parent="crowd" unique_id=230618666]
+z_index = 10
+
+[node name="crowd_guy" type="Sprite2D" parent="crowd/front_crowd2" unique_id=1360608425]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(121, 19)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy2" type="Sprite2D" parent="crowd/front_crowd2" unique_id=1677170744]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(140, 19)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy3" type="Sprite2D" parent="crowd/front_crowd2" unique_id=570961884]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(159, 19)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy4" type="Sprite2D" parent="crowd/front_crowd2" unique_id=1105606636]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(178, 19)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy5" type="Sprite2D" parent="crowd/front_crowd2" unique_id=1433486981]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(198, 19)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy6" type="Sprite2D" parent="crowd/front_crowd2" unique_id=1335801951]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(217, 19)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy7" type="Sprite2D" parent="crowd/front_crowd2" unique_id=2025072492]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(236, 19)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy8" type="Sprite2D" parent="crowd/front_crowd2" unique_id=158653942]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(255, 19)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy9" type="Sprite2D" parent="crowd/front_crowd2" unique_id=2019980200]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(255, 19)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy10" type="Sprite2D" parent="crowd/front_crowd2" unique_id=1097564259]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(276, 19)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy11" type="Sprite2D" parent="crowd/front_crowd2" unique_id=1867015808]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(298, 19)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="back_crowd" type="Parallax2D" parent="crowd" unique_id=1718103978]
+
+[node name="crowd_guy9" type="Sprite2D" parent="crowd/back_crowd" unique_id=1833343617]
+position = Vector2(135, -29)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy10" type="Sprite2D" parent="crowd/back_crowd" unique_id=406965413]
+position = Vector2(154, -29)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy11" type="Sprite2D" parent="crowd/back_crowd" unique_id=973790892]
+position = Vector2(173, -29)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy12" type="Sprite2D" parent="crowd/back_crowd" unique_id=1581428112]
+position = Vector2(192, -29)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy13" type="Sprite2D" parent="crowd/back_crowd" unique_id=1596556675]
+position = Vector2(212, -29)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy14" type="Sprite2D" parent="crowd/back_crowd" unique_id=1742713916]
+position = Vector2(231, -29)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy15" type="Sprite2D" parent="crowd/back_crowd" unique_id=1331646134]
+position = Vector2(250, -29)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy16" type="Sprite2D" parent="crowd/back_crowd" unique_id=256613470]
+position = Vector2(269, -29)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy17" type="Sprite2D" parent="crowd/back_crowd" unique_id=263805624]
+position = Vector2(289, -29)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy18" type="Sprite2D" parent="crowd/back_crowd" unique_id=322499831]
+position = Vector2(309, -29)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="back_crowd2" type="Parallax2D" parent="crowd" unique_id=1295434848]
+
+[node name="crowd_guy9" type="Sprite2D" parent="crowd/back_crowd2" unique_id=910302822]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(116, -38)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy10" type="Sprite2D" parent="crowd/back_crowd2" unique_id=1278512824]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(135, -38)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy11" type="Sprite2D" parent="crowd/back_crowd2" unique_id=1566556339]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(154, -38)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy12" type="Sprite2D" parent="crowd/back_crowd2" unique_id=282021904]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(173, -38)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy13" type="Sprite2D" parent="crowd/back_crowd2" unique_id=877406507]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(193, -38)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy14" type="Sprite2D" parent="crowd/back_crowd2" unique_id=102508006]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(212, -38)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy15" type="Sprite2D" parent="crowd/back_crowd2" unique_id=740006098]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(231, -38)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy16" type="Sprite2D" parent="crowd/back_crowd2" unique_id=794789473]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(250, -38)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy17" type="Sprite2D" parent="crowd/back_crowd2" unique_id=611802506]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(270, -38)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy18" type="Sprite2D" parent="crowd/back_crowd2" unique_id=1437268939]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(290, -38)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="mid_crowd" type="Parallax2D" parent="crowd" unique_id=505877817]
+
+[node name="crowd_guy19" type="Sprite2D" parent="crowd/mid_crowd" unique_id=1358326657]
+position = Vector2(336, -22)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy20" type="Sprite2D" parent="crowd/mid_crowd" unique_id=1659249484]
+position = Vector2(354, -13)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy21" type="Sprite2D" parent="crowd/mid_crowd" unique_id=1649362720]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(333, -3)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy22" type="Sprite2D" parent="crowd/mid_crowd" unique_id=684613549]
+position = Vector2(349, 9)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy23" type="Sprite2D" parent="crowd/mid_crowd" unique_id=1061136775]
+position = Vector2(329, 15)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="crowd_guy24" type="Sprite2D" parent="crowd/mid_crowd" unique_id=338191483]
+self_modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(347, -28)
+texture = ExtResource("5_psij3")
+script = ExtResource("6_u2vby")
+
+[node name="player" parent="." unique_id=187825736 instance=ExtResource("1_0mnch")]
+z_index = 11
+position = Vector2(-76, -13)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=752818218]
+position = Vector2(-7, -17)
+zoom = Vector2(7, 7)
+position_smoothing_enabled = true
+
+[node name="courtains" parent="." unique_id=150786123 instance=ExtResource("2_br7dr")]
+z_index = 12
+position = Vector2(78.99999, -29)
+scale = Vector2(7, 7)
+
+[node name="closet" parent="." unique_id=1732902212 instance=ExtResource("3_dgd0g")]
+z_index = 12
+position = Vector2(-110.99999, -19)
+scale = Vector2(10, 10)
+
+[node name="user_interface" parent="." unique_id=1913503779 instance=ExtResource("5_br7dr")]

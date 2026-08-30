@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d0eggyfy8wk1y"]
+
+[ext_resource type="Script" uid="uid://ddipcoslqbhst" path="res://scenes/other/theme/btn/game_btn.gd" id="1_s3yr7"]
+
+[node name="game_btn" type="Button" unique_id=736548539]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "btn"
+script = ExtResource("1_s3yr7")

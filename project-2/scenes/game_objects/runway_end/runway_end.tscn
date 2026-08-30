@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://fm48ggovpqm1"]
+
+[ext_resource type="Script" uid="uid://heeimrkkakon" path="res://scenes/game_objects/runway_end/runway_end.gd" id="1_8jck8"]
+[ext_resource type="Texture2D" uid="uid://cbddyy8yvs014" path="res://scenes/game_objects/runway_end/runway.tres" id="2_8jck8"]
+[ext_resource type="Texture2D" uid="uid://ei0ohhjddenq" path="res://scenes/game_objects/runway_end/throwable_sprite/rose.tres" id="2_kqf4a"]
+[ext_resource type="Texture2D" uid="uid://ccxei2sqv7on8" path="res://scenes/game_objects/runway_end/throwable_sprite/tomato.tres" id="3_ss5d4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ass7y"]
+size = Vector2(45.5, 38.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhmab"]
+size = Vector2(163, 26)
+
+[sub_resource type="Gradient" id="Gradient_8jck8"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3cc64"]
+gradient = SubResource("Gradient_8jck8")
+fill = 3
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Curve" id="Curve_ss5d4"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ss5d4"]
+curve = SubResource("Curve_ss5d4")
+
+[sub_resource type="Curve" id="Curve_kqf4a"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.48214293), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qhmab"]
+curve = SubResource("Curve_kqf4a")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ass7y"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = -9.9999895
+angle_max = 150.40001
+angle_curve = SubResource("CurveTexture_ss5d4")
+spread = 180.0
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.39999998
+scale_max = 0.59999996
+scale_curve = SubResource("CurveTexture_qhmab")
+
+[node name="runway_end" type="Node2D" unique_id=591645060]
+script = ExtResource("1_8jck8")
+rose_texture = ExtResource("2_kqf4a")
+tomato_texture = ExtResource("3_ss5d4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=173865202]
+position = Vector2(-48, 16)
+texture = ExtResource("2_8jck8")
+
+[node name="runway_end_area2d" type="Area2D" parent="." unique_id=869079962]
+position = Vector2(33, -31)
+collision_layer = 2
+
+[node name="runway_end_collision" type="CollisionShape2D" parent="runway_end_area2d" unique_id=874139364]
+position = Vector2(7, 24)
+shape = SubResource("RectangleShape2D_ass7y")
+
+[node name="runway_all_area2d" type="Area2D" parent="." unique_id=516277970]
+position = Vector2(30, -21)
+collision_layer = 2
+
+[node name="runway_all_collision" type="CollisionShape2D" parent="runway_all_area2d" unique_id=1648075282]
+position = Vector2(-43.5, 20)
+shape = SubResource("RectangleShape2D_qhmab")
+
+[node name="light" type="Node2D" parent="." unique_id=342315316]
+position = Vector2(-12, -2.000001)
+scale = Vector2(1.3433932, 1.3433932)
+
+[node name="projector" type="Node2D" parent="light" unique_id=1086910909]
+visible = false
+position = Vector2(-79.64905, 10.421372)
+scale = Vector2(0.67414004, 0.7377401)
+
+[node name="PointLight2D" type="PointLight2D" parent="light/projector" unique_id=1377844667]
+position = Vector2(45, -2)
+texture = SubResource("GradientTexture2D_3cc64")
+
+[node name="PointLight2D2" type="PointLight2D" parent="light/projector" unique_id=2105542012]
+position = Vector2(-19, -2)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+texture = SubResource("GradientTexture2D_3cc64")
+
+[node name="projector2" type="Node2D" parent="light" unique_id=1738526284]
+visible = false
+position = Vector2(-31.264116, 10.421371)
+scale = Vector2(0.67414004, 0.73773974)
+
+[node name="PointLight2D" type="PointLight2D" parent="light/projector2" unique_id=627370608]
+position = Vector2(45, -2)
+texture = SubResource("GradientTexture2D_3cc64")
+
+[node name="PointLight2D2" type="PointLight2D" parent="light/projector2" unique_id=1568557282]
+position = Vector2(-19, -2)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+texture = SubResource("GradientTexture2D_3cc64")
+
+[node name="projector3" type="Node2D" parent="light" unique_id=635783387]
+visible = false
+position = Vector2(24.564663, 13.398906)
+scale = Vector2(0.67414004, 0.73773974)
+
+[node name="PointLight2D" type="PointLight2D" parent="light/projector3" unique_id=1872438887]
+position = Vector2(45.20692, -6.342219)
+texture = SubResource("GradientTexture2D_3cc64")
+
+[node name="PointLight2D2" type="PointLight2D" parent="light/projector3" unique_id=1813674475]
+position = Vector2(-18.793081, -6.342219)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+texture = SubResource("GradientTexture2D_3cc64")
+
+[node name="eval_effect" type="GPUParticles2D" parent="." unique_id=1387767598]
+position = Vector2(43, 0)
+emitting = false
+amount = 20
+texture = ExtResource("2_kqf4a")
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ass7y")
+
+[connection signal="area_entered" from="runway_end_area2d" to="." method="_on_runway_end_area_2d_area_entered"]
+[connection signal="area_entered" from="runway_all_area2d" to="." method="_on_runway_all_area_2d_area_entered"]

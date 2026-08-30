@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Cloth_Data" format=3 uid="uid://dy0tvnw4yg7el"]
+
+[ext_resource type="Script" uid="uid://glnyry65xj5y" path="res://other/resources/clothes_data.gd" id="1_m1noq"]
+[ext_resource type="Texture2D" uid="uid://dq43otjgpqe41" path="res://other/resources/clothes_textures/farmer_clothes/farmer_top.tres" id="2_merwb"]
+
+[resource]
+script = ExtResource("1_m1noq")
+id = "13"
+display_name = "Farmer top"
+texture = ExtResource("2_merwb")
+slot = 1
+color = Array[String](["Brown"])
+metadata/_custom_type_script = "uid://glnyry65xj5y"

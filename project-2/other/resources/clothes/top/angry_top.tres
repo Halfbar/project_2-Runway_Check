@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Cloth_Data" format=3 uid="uid://damtgtwjwwttc"]
+
+[ext_resource type="Script" uid="uid://glnyry65xj5y" path="res://other/resources/clothes_data.gd" id="1_jr4x0"]
+[ext_resource type="Texture2D" uid="uid://cg4qmci87qenq" path="res://other/resources/clothes_textures/angry/angry_top.tres" id="2_jr4x0"]
+
+[resource]
+script = ExtResource("1_jr4x0")
+id = "10"
+display_name = "Angry top"
+texture = ExtResource("2_jr4x0")
+slot = 1
+color = Array[String](["Red"])
+metadata/_custom_type_script = "uid://glnyry65xj5y"

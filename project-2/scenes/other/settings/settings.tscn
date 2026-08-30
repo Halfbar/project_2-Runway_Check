@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://be0tudumof4jc"]
+
+[ext_resource type="Script" uid="uid://c6apo32s7rhpl" path="res://scenes/other/settings/settings.gd" id="1_y8chh"]
+
+[node name="settings" type="Control" unique_id=1268692987]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y8chh")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1251247268]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_constants/side_margin = 200
+current_tab = 0
+
+[node name="Volume" type="Control" parent="TabContainer" unique_id=1148052633]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="margin_container" type="MarginContainer" parent="TabContainer/Volume" unique_id=1148569525]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 120
+
+[node name="vbox_container" type="VBoxContainer" parent="TabContainer/Volume/margin_container" unique_id=1083545302]
+layout_mode = 2
+
+[node name="master_container" type="HBoxContainer" parent="TabContainer/Volume/margin_container/vbox_container" unique_id=1768528669]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="master_label" type="Label" parent="TabContainer/Volume/margin_container/vbox_container/master_container" unique_id=2011006944]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Master"
+
+[node name="master_slider" type="HSlider" parent="TabContainer/Volume/margin_container/vbox_container/master_container" unique_id=1226926240]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+
+[node name="music_container" type="HBoxContainer" parent="TabContainer/Volume/margin_container/vbox_container" unique_id=1823639479]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="music_label" type="Label" parent="TabContainer/Volume/margin_container/vbox_container/music_container" unique_id=1878562127]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music"
+
+[node name="music_slider" type="HSlider" parent="TabContainer/Volume/margin_container/vbox_container/music_container" unique_id=106450189]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+
+[node name="sfx_container" type="HBoxContainer" parent="TabContainer/Volume/margin_container/vbox_container" unique_id=322073228]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="sfx_label" type="Label" parent="TabContainer/Volume/margin_container/vbox_container/sfx_container" unique_id=1198509780]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX"
+
+[node name="sfx_slider" type="HSlider" parent="TabContainer/Volume/margin_container/vbox_container/sfx_container" unique_id=569901485]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+
+[connection signal="value_changed" from="TabContainer/Volume/margin_container/vbox_container/master_container/master_slider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="TabContainer/Volume/margin_container/vbox_container/music_container/music_slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="TabContainer/Volume/margin_container/vbox_container/sfx_container/sfx_slider" to="." method="_on_sfx_slider_value_changed"]

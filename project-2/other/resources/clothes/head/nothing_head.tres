@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Cloth_Data" format=3 uid="uid://ds6gpjva72dqg"]
+
+[ext_resource type="Script" uid="uid://glnyry65xj5y" path="res://other/resources/clothes_data.gd" id="1_xr8ld"]
+[ext_resource type="Texture2D" uid="uid://i6o5xaiytypd" path="res://other/resources/clothes_textures/nothing/nothing_head.tres" id="2_lwist"]
+
+[resource]
+script = ExtResource("1_xr8ld")
+id = "6"
+display_name = "Base Head"
+texture = ExtResource("2_lwist")
+color = Array[String](["Base"])
+metadata/_custom_type_script = "uid://glnyry65xj5y"

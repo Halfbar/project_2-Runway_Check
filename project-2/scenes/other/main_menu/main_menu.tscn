@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://5h7dwchhtler"]
+
+[ext_resource type="Script" uid="uid://064qpe5m8onw" path="res://scenes/other/main_menu/main_menu.gd" id="1_km8t0"]
+[ext_resource type="PackedScene" uid="uid://be0tudumof4jc" path="res://scenes/other/settings/settings.tscn" id="1_lfkt1"]
+[ext_resource type="Texture2D" uid="uid://dn3biwf6ddv0m" path="res://sprites/game_cover.png" id="2_02e2e"]
+[ext_resource type="PackedScene" uid="uid://d0eggyfy8wk1y" path="res://scenes/other/theme/btn/game_btn.tscn" id="2_k47sh"]
+
+[node name="main_menu" type="Control" unique_id=1630929116]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_km8t0")
+
+[node name="bg" type="Control" parent="." unique_id=748925073]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="bg" unique_id=780478757]
+self_modulate = Color(0.46618086, 0.4661808, 0.4661808, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_02e2e")
+
+[node name="panels" type="Control" parent="." unique_id=1331671418]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="settings" parent="panels" unique_id=1268692987 instance=ExtResource("1_lfkt1")]
+visible = false
+layout_mode = 1
+
+[node name="exit_settings_btn" parent="panels/settings" unique_id=777405999 instance=ExtResource("2_k47sh")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.25
+offset_top = -139.0
+offset_right = 67.25
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Exit"
+
+[node name="btns" type="Control" parent="." unique_id=829117017]
+anchors_preset = 0
+offset_left = 343.0
+offset_top = 96.0
+offset_right = 762.0
+offset_bottom = 515.0
+
+[node name="bg_panel" type="Panel" parent="btns" unique_id=1793026713]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="margin_container" type="MarginContainer" parent="btns/bg_panel" unique_id=933059010]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="vbox_container" type="VBoxContainer" parent="btns/bg_panel/margin_container" unique_id=30468957]
+layout_mode = 2
+
+[node name="play_btn" parent="btns/bg_panel/margin_container/vbox_container" unique_id=736548539 instance=ExtResource("2_k47sh")]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Play"
+
+[node name="settings_btn" parent="btns/bg_panel/margin_container/vbox_container" unique_id=639000099 instance=ExtResource("2_k47sh")]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Settings"
+
+[node name="exit_btn" parent="btns/bg_panel/margin_container/vbox_container" unique_id=1440045439 instance=ExtResource("2_k47sh")]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit"
+
+[connection signal="pressed" from="panels/settings/exit_settings_btn" to="." method="_on_exit_settings_btn_pressed"]
+[connection signal="pressed" from="btns/bg_panel/margin_container/vbox_container/play_btn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="btns/bg_panel/margin_container/vbox_container/settings_btn" to="." method="_on_settings_btn_pressed"]
+[connection signal="pressed" from="btns/bg_panel/margin_container/vbox_container/exit_btn" to="." method="_on_exit_btn_pressed"]

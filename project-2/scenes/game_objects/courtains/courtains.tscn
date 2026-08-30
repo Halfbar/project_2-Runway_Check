@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dnfjmpyl8afs1"]
+
+[ext_resource type="Script" uid="uid://b367lx5rkm3ic" path="res://scenes/game_objects/courtains/courtains.gd" id="1_um322"]
+[ext_resource type="Texture2D" uid="uid://bh7ifp0avckca" path="res://scenes/game_objects/courtains/courtain.png" id="2_um322"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7ol2"]
+atlas = ExtResource("2_um322")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1mxu"]
+atlas = ExtResource("2_um322")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um322"]
+atlas = ExtResource("2_um322")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jokl4"]
+atlas = ExtResource("2_um322")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj6va"]
+atlas = ExtResource("2_um322")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ass7y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7ol2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1mxu")
+}],
+"loop": 0,
+"name": &"close",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_um322")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jokl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj6va")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ass7y"]
+size = Vector2(14, 8)
+
+[node name="courtains" type="Node2D" unique_id=150786123]
+script = ExtResource("1_um322")
+
+[node name="courtains_sprite" type="AnimatedSprite2D" parent="." unique_id=1751916460]
+position = Vector2(-5.9604645e-08, 0)
+scale = Vector2(0.20898438, 0.1796875)
+sprite_frames = SubResource("SpriteFrames_ass7y")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="courtains_trigger_animation" type="Area2D" parent="." unique_id=55540355]
+collision_layer = 2
+
+[node name="courtain_podium_enter_collision" type="CollisionShape2D" parent="courtains_trigger_animation" unique_id=1932161408]
+shape = SubResource("RectangleShape2D_ass7y")
+
+[connection signal="area_entered" from="courtains_trigger_animation" to="." method="_on_courtains_area_2d_area_entered"]
+[connection signal="area_exited" from="courtains_trigger_animation" to="." method="_on_courtains_area_2d_area_exited"]

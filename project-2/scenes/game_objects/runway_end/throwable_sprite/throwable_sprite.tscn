@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b87nm0xnyv2el"]
+
+[ext_resource type="Texture2D" uid="uid://ccxei2sqv7on8" path="res://scenes/game_objects/runway_end/throwable_sprite/tomato.tres" id="1_1ybhn"]
+
+[node name="throwable_sprite" type="Sprite2D" unique_id=1615772003]
+texture = ExtResource("1_1ybhn")
